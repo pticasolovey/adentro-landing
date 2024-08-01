@@ -1,0 +1,37 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body {
+	scroll-behavior: smooth;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.text-gradient,
+.text-gradient-underline {
+	background: linear-gradient(to right, #ffa642, #ee4d5d);
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-o-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+	position: relative;
+}
+
+.text-gradient-underline::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -0.1em;
+	width: 100%;
+	height: 0.1em;
+	background: linear-gradient(to right, #ffa642, #ee4d5d);
+	z-index: -1;
+}
