@@ -3,12 +3,13 @@ import { classNames } from '@/utils/classNames';
 
 import Image from 'next/image';
 import flagIcon from '@/assets/flag-icon.svg';
+import background from '@/assets/background_hero.svg';
 import SectionWrapper from './SectionWrapper';
 
 const HeroSection: FC = () => {
 	return (
 		<SectionWrapper sectionId='hero' styles='mt-4'>
-			<div className='md:h-[60vh] flex flex-col items-center justify-center gap-10 text-center'>
+			<div className='relative md:h-[60vh] flex flex-col items-center justify-center gap-10 text-center'>
 				<div
 					className={classNames(
 						'flex flex-col',
@@ -34,6 +35,10 @@ const HeroSection: FC = () => {
 						<p className='text-sm'>Pushing the limits since 2013</p>
 						<Image src={flagIcon} alt='flag icon' />
 					</div>
+				</div>
+
+				<div className='h-full absolute top-0 left-[25%] -z-10'>
+					<Image src={background} alt='background' />
 				</div>
 			</div>
 		</SectionWrapper>

@@ -1,11 +1,14 @@
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
+import Image from 'next/image';
 import SectionWrapper from './SectionWrapper';
 import ServicesCardsList from '../services/ServicesCardsList';
+
+import background from '@/assets/background_services.svg';
 
 const ServicesSection: FC = () => {
 	return (
 		<SectionWrapper sectionId='services'>
-			<Fragment>
+			<div className='relative'>
 				<div className='flex flex-col gap-4 text-center'>
 					<h2 className='text-5xl lg:text-7xl font-semibold'>Elastic Search and LLM</h2>
 					<span className='text-4xl lg:text-5xl font-light'>— a powerful combination</span>
@@ -17,7 +20,11 @@ const ServicesSection: FC = () => {
 				</p>
 
 				<ServicesCardsList />
-			</Fragment>
+
+				<div className='h-full absolute -top-[10%] right-[40%] -z-10'>
+					<Image src={background} alt='background' />
+				</div>
+			</div>
 		</SectionWrapper>
 	);
 };
