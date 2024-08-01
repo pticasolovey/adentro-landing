@@ -11,7 +11,7 @@ const SectionWrapper: FC<SectionWrapperProps> = ({ children, sectionId, styles }
 	return (
 		<section
 			id={sectionId}
-			className={classNames('max-w-[1300px] w-full py-[60px] md:py-[80px] lg:py-[100px] px-10 mx-auto', styles!)}
+			className={classNames('max-w-[1300px] w-full py-16 md:py-20 lg:py-24 px-6 md:px-10 mx-auto', styles!)}
 		>
 			{children}
 		</section>

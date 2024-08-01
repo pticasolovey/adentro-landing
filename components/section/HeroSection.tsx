@@ -7,8 +7,8 @@ import SectionWrapper from './SectionWrapper';
 
 const HeroSection: FC = () => {
 	return (
-		<SectionWrapper sectionId='hero' styles='my-0'>
-			<div className='h-[50vh] md:h-[60vh] flex flex-col items-center justify-center gap-10 text-center'>
+		<SectionWrapper sectionId='hero' styles='mt-4'>
+			<div className='md:h-[60vh] flex flex-col items-center justify-center gap-10 text-center'>
 				<div
 					className={classNames(
 						'flex flex-col',

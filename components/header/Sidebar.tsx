@@ -22,13 +22,13 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, handleClose }) => {
 		>
 			<div className='p-4'>
 				<button onClick={handleClose} className='mb-4'>
-					<MdClose size={40} color='#1A1365' />
+					<MdClose size={30} color='#1A1365' />
 				</button>
 
-				<nav className='space-y-4 mt-10 pl-2'>
+				<nav className='space-y-4 mt-4 pl-1'>
 					<ul className='flex flex-col gap-6'>
 						{NAVIGATION.map(({ href, label }) => (
-							<li key={label} className='text-4xl text-[#1A1365]'>
+							<li key={label} className='text-3xl text-[#1A1365]'>
 								<Link href={href} onClick={handleClose}>
 									{label}
 								</Link>
