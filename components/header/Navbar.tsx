@@ -21,23 +21,25 @@ const Navbar: FC<NavbarProps> = ({ handleOpen }) => {
 
 			<ul className='hidden md:flex align-center gap-12 lg:gap-24 px-4 text-sm leading-8 text-[#1A1365]'>
 				<li>
-					<Link href=''>Approach</Link>
+					<Link href='#approach'>Approach</Link>
 				</li>
 
 				<li>
-					<Link href=''>Services</Link>
+					<Link href='#services'>Services</Link>
 				</li>
 
 				<li className='flex items-center'>
-					<Logo />
+					<Link href='#hero'>
+						<Logo />
+					</Link>
 				</li>
 
 				<li>
-					<Link href=''>Culture</Link>
+					<Link href='#culture'>Culture</Link>
 				</li>
 
 				<li>
-					<Link href=''>Contact</Link>
+					<Link href='#contact'>Contact</Link>
 				</li>
 			</ul>
 		</nav>

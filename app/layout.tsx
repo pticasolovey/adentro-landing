@@ -21,7 +21,10 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
 	return (
 		<html lang='en'>
-			<body className={classNames(font.className, 'min-h-[100dvh] w-full flex flex-col')} suppressHydrationWarning>
+			<body
+				className={classNames(font.className, 'min-h-[100dvh] h-full w-full flex flex-col text-[#1A1365]')}
+				suppressHydrationWarning
+			>
 				<Header />
 				{children}
 				<Footer />

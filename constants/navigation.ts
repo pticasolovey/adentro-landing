@@ -1,6 +1,6 @@
 export const NAVIGATION = [
-	{ href: '', label: 'Approach' },
-	{ href: '', label: 'Services' },
-	{ href: '', label: 'Culture' },
-	{ href: '', label: 'Contact' },
+	{ href: '#approach', label: 'Approach' },
+	{ href: '#services', label: 'Services' },
+	{ href: '#culture', label: 'Culture' },
+	{ href: '#contact', label: 'Contact' },
 ];

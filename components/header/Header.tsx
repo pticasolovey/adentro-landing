@@ -10,7 +10,7 @@ const Header: FC = () => {
 	const handleToggle = () => setIsOpen(!isOpen);
 
 	return (
-		<header className='w-full h-16 py-4'>
+		<header className='fixed w-full h-20 py-4 bg-white z-20'>
 			<Navbar handleOpen={handleToggle} />
 			<Sidebar isOpen={isOpen} handleClose={handleToggle} />
 		</header>
