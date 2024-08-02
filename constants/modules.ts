@@ -3,7 +3,6 @@ import modulesImage_2 from '@/assets/modules/modules_2.svg';
 import modulesImage_3 from '@/assets/modules/modules_3.svg';
 import modulesImage_4 from '@/assets/modules/modules_4.svg';
 import modulesImage_5 from '@/assets/modules/modules_5.svg';
-import circleDecorationImage from '@/assets/circle_decoration.svg';
 
 export const modulesCardsList = [
 	{
@@ -44,12 +43,5 @@ export const modulesCardsList = [
 		title: 'Dynamic Threat Intelligence',
 		description:
 			'GenAI modules aggregate and analyze threat intelligence from multiple sources, providing real-time updates and actionable insights to stay ahead of emerging threats.',
-	},
-
-	{
-		id: 6,
-		imageSRC: circleDecorationImage,
-		title: null,
-		description: null,
 	},
 ];

@@ -1,11 +1,14 @@
 import { FC } from 'react';
 import { classNames } from '@/utils/classNames';
 
+import Image from 'next/image';
+import background from '@/assets/background_footer.svg';
+
 const Footer: FC = () => {
 	const currentYear = new Date().getFullYear();
 
 	return (
-		<footer className='py-10'>
+		<footer className='relative py-10'>
 			<ul
 				className={classNames(
 					'justify-center md:items-center space-x-4 md:space-x-1',
@@ -21,6 +24,10 @@ const Footer: FC = () => {
 				<li className='hidden md:block'>|</li>
 				<li>Switzerland</li>
 			</ul>
+
+			<div className='absolute left-0 bottom-0 -z-10'>
+				<Image src={background} alt='background' className='h-full w-full' />
+			</div>
 		</footer>
 	);
 };
