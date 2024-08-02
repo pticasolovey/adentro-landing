@@ -5,8 +5,8 @@ import SectionWrapper from './SectionWrapper';
 const ContactSection: FC = () => {
 	return (
 		<SectionWrapper sectionId='contact'>
-			<div className='relative flex flex-col items-center justify-center gap-10 text-center font-medium'>
-				<h2 className='text-5xl sm:text-6xl md:text-7xl leading-[60px] sm:leading-[80px]'>
+			<div className='flex flex-col items-center justify-center gap-6 sm:gap-10 text-center font-medium'>
+				<h2 className='text-4xl sm:text-5xl md:text-6xl leading-[50px] sm:leading-[60px] md:leading-[70px]'>
 					Let&apos;s make <br /> the connection!
 				</h2>
 

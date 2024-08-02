@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { classNames } from '@/utils/classNames';
 import { NAVIGATION } from '@/constants/navigation';
 
@@ -11,6 +11,14 @@ interface SidebarProps {
 }
 
 const Sidebar: FC<SidebarProps> = ({ isOpen, handleClose }) => {
+	useEffect(() => {
+		document.body.style.overflow = isOpen ? 'hidden' : '';
+
+		return () => {
+			document.body.style.overflow = '';
+		};
+	}, [isOpen]);
+
 	return (
 		<aside
 			className={classNames(
