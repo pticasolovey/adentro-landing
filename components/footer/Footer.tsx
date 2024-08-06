@@ -1,11 +1,22 @@
 import { FC } from 'react';
+import { urlFor } from '@/sanity/lib/image';
+
+import { fetchData } from '@/utils/fetchData';
 import { classNames } from '@/utils/classNames';
 
 import Image from 'next/image';
 import background from '@/assets/background_footer.svg';
 
-const Footer: FC = () => {
-	const currentYear = new Date().getFullYear();
+const query = `
+	*[_type == 'footer'] {
+  		list,
+		background
+	}
+`;
+
+const Footer: FC = async () => {
+	const data = await fetchData(query);
+	const backgroundSRC = urlFor(data[0].background).url();
 
 	return (
 		<footer className='relative py-10'>
@@ -16,20 +27,22 @@ const Footer: FC = () => {
 					'text-sm leading-8 text-[#1A1365]'
 				)}
 			>
-				<li>© {currentYear} adentro AG</li>
-				<li className='hidden md:block'>|</li>
-				<li>Sihlbruggstrasse 109</li>
-				<li className='hidden md:block'>|</li>
-				<li>CH 6340 Baar ZG</li>
-				<li className='hidden md:block'>|</li>
-				<li>Switzerland</li>
+				<li>{data[0].list[0]}</li>
+				<Divider />
+				<li>{data[0].list[1]}</li>
+				<Divider />
+				<li>{data[0].list[2]}</li>
+				<Divider />
+				<li>{data[0].list[3]}</li>
 			</ul>
 
 			<div className='absolute left-0 bottom-0 -z-10'>
-				<Image src={background} alt='background' className='h-full w-full' />
+				<Image src={backgroundSRC || background} alt='background' width={509} height={599} />
 			</div>
 		</footer>
 	);
 };
+
+const Divider: FC = () => <li className='hidden md:block'>|</li>;
 
 export default Footer;
