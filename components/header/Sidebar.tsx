@@ -1,6 +1,5 @@
 import { FC, useEffect } from 'react';
 import { classNames } from '@/utils/classNames';
-import { NAVIGATION } from '@/constants/navigation';
 
 import Link from 'next/link';
 import { MdClose } from 'react-icons/md';
@@ -8,9 +7,10 @@ import { MdClose } from 'react-icons/md';
 interface SidebarProps {
 	isOpen: boolean;
 	handleClose: () => void;
+	navigation: any[];
 }
 
-const Sidebar: FC<SidebarProps> = ({ isOpen, handleClose }) => {
+const Sidebar: FC<SidebarProps> = ({ isOpen, handleClose, navigation }) => {
 	useEffect(() => {
 		document.body.style.overflow = isOpen ? 'hidden' : '';
 
@@ -35,13 +35,15 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, handleClose }) => {
 
 				<nav className='space-y-4 mt-4 pl-1'>
 					<ul className='flex flex-col gap-6'>
-						{NAVIGATION.map(({ href, label }) => (
-							<li key={label} className='text-3xl text-[#1A1365]'>
-								<Link href={href} onClick={handleClose}>
-									{label}
-								</Link>
-							</li>
-						))}
+						{navigation
+							.filter(({ href }) => href !== '#hero')
+							.map(({ _key, href, label }) => (
+								<li key={_key} className='text-3xl text-[#1A1365]'>
+									<Link href={href} onClick={handleClose}>
+										{label}
+									</Link>
+								</li>
+							))}
 					</ul>
 				</nav>
 			</div>

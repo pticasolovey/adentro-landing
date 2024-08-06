@@ -1,11 +1,12 @@
 import { ReactNode } from 'react';
+import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
 import { Noto_Sans } from 'next/font/google';
 
 import { classNames } from '@/utils/classNames';
 
-import Header from '@/components/header/Header';
-import Footer from '@/components/footer/Footer';
+const Header = dynamic(() => import('@/components/header/Header'), { ssr: false });
+const Footer = dynamic(() => import('@/components/footer/Footer'), { ssr: false });
 
 import './globals.scss';
 
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 	description: 'Efficiency comes with automation',
 };
 
-const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
+const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
 	return (
 		<html lang='en'>
 			<body
