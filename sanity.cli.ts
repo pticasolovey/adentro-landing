@@ -4,8 +4,8 @@
  **/
 import { defineCliConfig } from 'sanity/cli';
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID;
-const dataset = process.env.NEXT_PUBLIC_SANITY_STUDIO_DATASET;
+import { projectId } from '@/sanity/env';
+import { dataset } from '@/sanity/env';
 
 export default defineCliConfig({
 	api: {
